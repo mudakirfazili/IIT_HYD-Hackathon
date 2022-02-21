@@ -3,7 +3,7 @@ This repository contains the development and analysis of 10T SRAM using Synopsys
 
 # Table of Contents
 - [Introduction](#introduction)
-  -[Problem Statement](#problem-statement)
+  - [Problem Statement](#problem-statement)
 - [Basics of SRAM](#basics-of-sram)
 - [Tools Used](#tools-used)
 - [SRAM Cell Design](#sram-cell-design)
@@ -23,13 +23,22 @@ SRAM's are the type of random access memories. They store information in the for
 ## Problem Statement
 
 Development and analysis of a 10T SRAM cell on 28nm fabrication technology using Synopsys Custom Compiler.
-- Plot the various signal to noise margins.
-- Determine the access time.
-- Calculate the area estimates.
+1. Plot the various signal to noise margins.
+2. Determine the access time.
+3. Calculate the area estimates.
 
 # Basics of SRAM
 
-A schmitt trigger (ST) based 10T SRAm is designed in this work. Let us first understand how a [6T SRAM]() cell works
+A schmitt trigger (ST) based 10T SRAM is designed in this work. Let us first understand how a [6T SRAM](images/6t.png) cell works. It consists of two cross-coupled inverters (MNL, MPL and MNR, MPR) and two access transistors at its complementary nodes Q and QB. The two bit lines (BL and BLB) are connected through access transistors. The access transistors are controlled by wordline (WL). Wordline is set 1 or 0 according to the operation needed. 1 for write operation and 0 for read as can be better understood by the following table.
+
+| Control Signal  | Operation | Operation | Operation | Operation |
+| --- | --- | --- | --- | --- |
+|     | Write '0' | Write '1' | Read | Hold |
+| BL  | 0 | 1 | Pre | 1|
+| BLB | 1 | 0 | Pre | 1|
+| WL  | 1 | 1 | 1   | 0|
+
+![6t](images/6t.png)
 
 # Tools Used
 x
