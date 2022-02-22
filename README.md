@@ -40,18 +40,28 @@ A schmitt trigger (ST) based 10T SRAM is designed in this work. Let us first und
 
 ![6t](images/6t.png)
 
+The [10T SRAM](images/10t.png) circuit designed in this project is similar in operation to the 6T SRAM cell except crital parameters like static noise margins (SNM) are improved. While an compromise is made with the area requirements however significant improvement on SNM is observed.
+![10t](images/10t.png)
+
 # Tools Used
-x
+Synopsys custom compiler was provided over remote desktop connection to the participants of this hackathon. Also, a 32nm PDK was provied that included the model files of the respective design elements like NMOS, PMOS, BJT etc. The testbenches are simulated using Primesim and the waveforms are shown on Waveview applications.
 
 # SRAM Cell Design
-x
+
+The [schematic](images/10ts.png) of the basic cell is designed using 10 transistors (8 NMOS and 2 PMOS). Ports are created for inputs, outputs and power supply. Finally a symbol is created from the schematic.
+
+![10ts](images/10ts.png)
 
 # SRAM Cell Analysis
 x
 
 ## HSNM
 
+![HSNM](images/hsnm.png)
+
 ## RSNM
+
+![RSNM](images/RSNM.png)
 
 ## WSNM
 
