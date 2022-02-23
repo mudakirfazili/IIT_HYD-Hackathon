@@ -44,7 +44,7 @@ The [10T SRAM](images/10t.png) circuit designed in this project is similar in op
 ![10t](images/10t.png)
 
 # Tools Used
-Synopsys custom compiler was provided over remote desktop connection to the participants of this hackathon. Also, a 32nm PDK was provied that included the model files of the respective design elements like NMOS, PMOS, BJT etc. The testbenches are simulated using Primesim and the waveforms are shown on Waveview applications.
+Synopsys custom compiler was provided over remote desktop connection to the participants of this hackathon. Also, a 32nm PDK was provied that included the model files of the respective design elements like NMOS, PMOS, BJT etc. The testbenches are simulated using Primewave and the waveforms are shown on Waveview applications.
 
 # SRAM Cell Design
 
