@@ -11,6 +11,8 @@ This repository contains the development and analysis of 10T SRAM using Synopsys
   - [HSNM](#hsnm)
   - [RSNM](#rsnm)
   - [WSNM](#wsnm)
+  - [BLM](#blm)
+  - [WLM](#wlm)
   - [Access Time](#access-time)
   - [Area Estimates](#area-estimates)
 - [Comparative Analysis](#comparative-analysis)
@@ -80,6 +82,16 @@ The read static noise margin is derived by latching the WL to logic 1 and BL & B
 ![RSNM](images/RSNM.png)
 
 ## WSNM
+
+![WSNMCKT](images/wnmckt.png)
+![WSNM](images/WSNM.png)
+
+## BLM
+
+![BLMCKT](images/blmckt.png)
+![BLM](images/blm.png)
+
+## WLM
 
 ## Access Time
 
