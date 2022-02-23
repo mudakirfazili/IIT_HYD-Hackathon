@@ -68,22 +68,25 @@ In this project the following analysis are conducted on the 10T SRAM cell:
 
 ## HSNM
 
-The hold static noise margin is derived by latching the WL to logic 0 and BL & BLB to logic 1 as show in following [circuit](images/hsnmckt.png). Then the dc sweep analysis is done to the voltage at the pin Q and the corresponding QB voltage is recorded. Then a QB(v) vs Q(v) graph is plotted by importing the simulation data in MS excel. The coorsponding graph results in the hold SNM butterfly curve. The largest square that can fit inside the openings of the curve signifies the maximum amount of noise the 10T SRAM can withstand while in hold condition. We have estimated HSNM to be **0.26v** for the designed circuit.
+The hold static noise margin is derived by latching the WL to logic 0 and BL & BLB to logic 1 as show in following [circuit](images/hsnmckt.png). Then the dc sweep analysis is done to the voltage at the pin Q and the corresponding QB voltage is recorded. Then a QB(v) vs Q(v) graph is plotted by importing the simulation data in MS excel. The corresponding graph results in the hold SNM butterfly curve. The largest square that can fit inside the openings of the curve signifies the maximum amount of noise the 10T SRAM can withstand while in hold condition. We have estimated HSNM to be **0.26v** for the designed circuit. The corresponding waveforms of Q and QB in waveview can be seen [here](images/hsnmwv.png).
 
 ![HSNMCKT](images/hsnmckt.png)
 ![HSNM](images/hsnm.png)
 
 ## RSNM
 
-The read static noise margin is derived
+The read static noise margin is derived by latching the WL to logic 1 and BL & BLB to logic 1 as show in following [circuit](images/rsnmckt.png). Then the dc sweep analysis is done to the voltage at the pin Q and the corresponding QB voltage is recorded. Then a QB(v) vs Q(v) graph is plotted by importing the simulation data in MS excel. The corresponding graph results in the hold SNM butterfly curve. The largest square that can fit inside the openings of the curve signifies the maximum amount of noise the 10T SRAM can withstand while in read state. We have estimated RSNM to be **0.08v** for the designed circuit.The corresponding waveforms of Q and QB in waveview can be seen [here](images/rsnmwv.png).
+![RSNMCKT](images/rsnmckt.png)
 ![RSNM](images/RSNM.png)
 
 ## WSNM
 
 ## Access Time
 
-# Area Estimates
+## Area Estimates
 
 # Comparative Analysis
 
 # References
+1.  J. P. Kulkarni, K. Kim and K. Roy, "A 160 mV Robust Schmitt Trigger Based Subthreshold SRAM," in IEEE Journal of Solid-State Circuits, vol. 42, no. 10, pp. 2303-2313, Oct. 2007, doi: 10.1109/JSSC.2007.897148.
+2.  Ahmad, Sayeed, Naushad Alam, and Mohd Hasan. "Pseudo differential multi-cell upset immune robust SRAM cell for ultra-low power applications." AEU-International Journal of Electronics and Communications 83 (2018): 366-375, doi: 10.1016/j.aeue.2017.09.022.
