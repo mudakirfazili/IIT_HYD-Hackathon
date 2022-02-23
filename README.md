@@ -42,7 +42,7 @@ A schmitt trigger (ST) based 10T SRAM is designed in this work. Let us first und
 
 ![6t](images/6t.png)
 
-The [10T SRAM](images/10t.png) circuit designed in this project is similar in operation to the 6T SRAM cell except crital parameters like static noise margins (SNM) are improved. While an compromise is made with the area requirements however significant improvement on SNM is observed.
+The [10T SRAM](images/10t.png) circuit designed in this project is similar in operation to the 6T SRAM cell except crital parameters like static noise margins (SNM) are improved. While an compromise is made with the area requirements however significant improvement on SNM is observed. To improve the inverter characteristics, Schmitt trigger configuration is used. A Schmitt trigger increases or decreases the switching threshold of an inverter depending on the direction of the input transition. This adaptation is achieved with the help of a feedback mechanism.
 ![10t](images/10t.png)
 
 # Tools Used
@@ -52,6 +52,23 @@ Synopsys custom compiler was provided over remote desktop connection to the part
 
 The [schematic](images/10ts.png) of the basic cell is designed using 10 transistors (8 NMOS and 2 PMOS). Ports are created for inputs, outputs and power supply. Finally a symbol is created from the schematic. This symbol is then further used to first analyze the cell metrics then it can be used to scale the design to realize n-bit SRAM.
 ![10ts](images/10ts.png)
+
+The netlist of the 10T SRAM cell is:
+```
+.subckt sram BL BLB Q QB Vdd WL gnd
+*.PININFO BL:B BLB:B Q:O QB:O Vdd:I WL:I gnd:I
+MM7 BLB WL QB gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM6 Vdd QB net5 gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM5 BL WL Q gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM4 Vdd Q net15 gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM3 Q QB net15 gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM2 net15 QB gnd gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM1 net5 Q gnd gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM0 QB Q net5 gnd n105 w=0.1u l=0.03u nf=1 m=1
+MM9 QB Q Vdd Vdd p105 w=0.1u l=0.03u nf=1 m=1
+MM8 Q QB Vdd Vdd p105 w=0.1u l=0.03u nf=1 m=1
+.ends sram
+```
 
 The above circuit is simulated and the [waveform](images/wave_write.png) clearly depicts the successful write 0 and write 1 operation. The [circuit setup](images/ckt.png) is done by connecting the corresponding inputs, outputs and power supply as mentioned in the following table.
 
@@ -84,7 +101,7 @@ The read static noise margin is derived by latching the WL to logic 1 and BL & B
 ## WSNM
 
 ![WSNMCKT](images/wnmckt.png)
-![WSNM](images/WSNM.png)
+![WSNM](images/wsnm.png)
 
 ## BLM
 
