@@ -48,19 +48,34 @@ Synopsys custom compiler was provided over remote desktop connection to the part
 
 # SRAM Cell Design
 
-The [schematic](images/10ts.png) of the basic cell is designed using 10 transistors (8 NMOS and 2 PMOS). Ports are created for inputs, outputs and power supply. Finally a symbol is created from the schematic.
-
+The [schematic](images/10ts.png) of the basic cell is designed using 10 transistors (8 NMOS and 2 PMOS). Ports are created for inputs, outputs and power supply. Finally a symbol is created from the schematic. This symbol is then further used to first analyze the cell metrics then it can be used to scale the design to realize n-bit SRAM.
 ![10ts](images/10ts.png)
 
+The above circuit is simulated and the [waveform](images/wave_write.png) clearly depicts the successful write 0 and write 1 operation. The [circuit setup](images/ckt.png) is done by connecting the corresponding inputs, outputs and power supply as mentioned in the following table.
+
+| Parameter | Value |
+| --- | --- |
+| Voltage Supply (Vdc)  | 0.6v  |
+| Rise Time | 75ps  |
+| Bit-line Period (BL and BLB)  | 1.2us |
+| Word-line Period (WL) | 700ps |
+
+![wave_write](images/ckt.png)
+![wave_write](images/write01.png)
+
 # SRAM Cell Analysis
-x
+In this project the following analysis are conducted on the 10T SRAM cell:
 
 ## HSNM
 
+The hold static noise margin is derived by latching the WL to logic 0 and BL & BLB to logic 1 as show in following [circuit](images/hsnmckt.png). Then the dc sweep analysis is done to the voltage at the pin Q and the corresponding QB voltage is recorded. Then a QB(v) vs Q(v) graph is plotted by importing the simulation data in MS excel. The coorsponding graph results in the hold SNM butterfly curve. The largest square that can fit inside the openings of the curve signifies the maximum amount of noise the 10T SRAM can withstand while in hold condition. We have estimated HSNM to be **0.26v** for the designed circuit.
+
+![HSNMCKT](images/hsnmckt.png)
 ![HSNM](images/hsnm.png)
 
 ## RSNM
 
+The read static noise margin is derived
 ![RSNM](images/RSNM.png)
 
 ## WSNM
