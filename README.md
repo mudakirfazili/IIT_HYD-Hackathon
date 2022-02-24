@@ -43,7 +43,7 @@ A schmitt trigger (ST) based 10T SRAM is designed in this work. Let us first und
 
 ![6t](images/6t.png)
 
-The [10T SRAM](images/10t.png) circuit designed in this project is similar in operation to the 6T SRAM cell except crital parameters like static noise margins (SNM) are improved. While an compromise is made with the area requirements however significant improvement on SNM is observed. To improve the inverter characteristics, Schmitt trigger configuration is used. A Schmitt trigger increases or decreases the switching threshold of an inverter depending on the direction of the input transition. This adaptation is achieved with the help of a feedback mechanism.
+The [10T SRAM](images/10t.png) circuit designed in this project is similar in operation to the 6T SRAM cell except crital parameters like static noise margins (SNM) are improved. While an compromise is made with the area requirements however significant improvement on SNM is observed. To improve the inverter characteristics, Schmitt trigger configuration is used. A Schmitt trigger increases or decreases the switching threshold of an inverter depending on the direction of the input transition. This adaptation is achieved with the help of a feedback mechanism [1](#references).
 ![10t](images/10t.png)
 
 # Tools Used
