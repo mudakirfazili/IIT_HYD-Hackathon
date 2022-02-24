@@ -49,6 +49,8 @@ The [10T SRAM](images/10t.png) circuit designed in this project is similar in op
 # Tools Used
 Synopsys custom compiler was provided over remote desktop connection to the participants of this hackathon. Also, a 32nm PDK was provied that included the model files of the respective design elements like NMOS, PMOS, BJT etc. The testbenches are simulated using Primewave and the waveforms are shown on Waveview applications.
 
+![Custom Compiler](images/cc.png)
+
 # SRAM Cell Design
 
 The [schematic](images/10ts.png) of the basic cell is designed using 10 transistors (8 NMOS and 2 PMOS). Ports are created for inputs, outputs and power supply. Finally a symbol is created from the schematic. This symbol is then further used to first analyze the cell metrics then it can be used to scale the design to realize n-bit SRAM.
@@ -115,6 +117,10 @@ The WSNM from butterfly curve method has limitation of inability to directly mea
 
 ## WLM
 
+Similar to the BLM, the word line margin (WLM) is calculated by latching the BL pin to logic 0 and BLB to logic 1 and then sweeping the WL from 0 to 0.6v. The voltage point where the Q and QB waveforms intersect when subtracted from the vdd gives the WLM. In this design it is found to be 0.05v. The low values of WLM suggest difficult write operation.
+
+![BLMCKT](images/wlmsch.png)
+![BLM](images/wlm.png)
 
 ## Area Estimates
 
