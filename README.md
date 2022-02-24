@@ -13,9 +13,10 @@ This repository contains the development and analysis of 10T SRAM using Synopsys
   - [WSNM](#wsnm)
   - [BLM](#blm)
   - [WLM](#wlm)
-  - [Access Time](#access-time)
   - [Area Estimates](#area-estimates)
-- [Comparative Analysis](#comparative-analysis)
+  - [Power Estimates](#power-estimates)
+- [Conclusion](#conclusion)
+- [Acknowledgements](#acknowledgements)
 - [References](#references)
 
 # Introduction
@@ -114,11 +115,19 @@ The WSNM from butterfly curve method has limitation of inability to directly mea
 
 ## WLM
 
-## Access Time
 
 ## Area Estimates
 
-# Comparative Analysis
+## Power Estimates
+
+# Conclusion
+
+# Acknowledgements
+1. [IIT Hyderabad](https://iith.ac.in/)
+2. [VLSI System Design Corporation](https://www.vlsisystemdesign.com/)
+3. [Synopsys](https://www.synopsys.com/)
+
+A special vote of thanks to **Kunal Ghosh** (founder VSD), **Chinmay panda** (IIT Hyderabad), **Sameer Durgoji** (NIT Karnataka)
 
 # References
 1.  J. P. Kulkarni, K. Kim and K. Roy, "A 160 mV Robust Schmitt Trigger Based Subthreshold SRAM," in IEEE Journal of Solid-State Circuits, vol. 42, no. 10, pp. 2303-2313, Oct. 2007, doi: 10.1109/JSSC.2007.897148.
