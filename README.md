@@ -94,11 +94,13 @@ The hold static noise margin is derived by latching the WL to logic 0 and BL & B
 
 ## RSNM
 
-The read static noise margin is derived by latching the WL to logic 1 and BL & BLB to logic 1 as show in following [circuit](images/rsnmckt.png). Then the dc sweep analysis is done to the voltage at the pin Q and the corresponding QB voltage is recorded. Then a QB(v) vs Q(v) graph is plotted by importing the simulation data in MS excel. The corresponding graph results in the hold SNM butterfly curve. The largest square that can fit inside the openings of the curve signifies the maximum amount of noise the 10T SRAM can withstand while in read state. We have estimated RSNM to be **0.08v** for the designed circuit.The corresponding waveforms of Q and QB in waveview can be seen [here](images/rsnmwv.png).
+The read static noise margin is derived by latching the WL to logic 1 and BL & BLB to logic 1 as show in following [circuit](images/rsnmckt.png). Then the dc sweep analysis is done to the voltage at the pin Q and the corresponding QB voltage is recorded. Then a QB(v) vs Q(v) graph is plotted by importing the simulation data in MS excel. The corresponding graph results in the read SNM butterfly curve. The largest square that can fit inside the openings of the curve signifies the maximum amount of noise the 10T SRAM can withstand while in read state. We have estimated RSNM to be **0.08v** for the designed circuit.The corresponding waveforms of Q and QB in waveview can be seen [here](images/rsnmwv.png).
 ![RSNMCKT](images/rsnmckt.png)
 ![RSNM](images/RSNM.png)
 
 ## WSNM
+
+The write static noise margin is derived by latching the WL & BLB to logic 1 and BL to logic 0 as show in following [circuit](images/wnmckt.png). Then the dc sweep analysis is done to the voltage at the pin QB and the corresponding QB voltage is recorded. Then a QB(v) vs Q(v) graph is plotted by importing the simulation data in MS excel. Then the plotted WSNM is plotted on the same graph of the RSNM and the  largest square that can fit inside the openings of the curve signifies the measure of the ability of the cell to pull down a 1 storing node to a voltage less than switching threshold voltage. We have estimated WSNM to be **0.26v** for the designed circuit.The corresponding waveforms of Q  in waveview can be seen [here](images/wsnm_cc.png).
 
 ![WSNMCKT](images/wnmckt.png)
 ![WSNM](images/wsnm.png)
