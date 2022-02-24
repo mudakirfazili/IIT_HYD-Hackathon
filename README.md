@@ -107,6 +107,8 @@ The write static noise margin is derived by latching the WL & BLB to logic 1 and
 
 ## BLM
 
+The WSNM from butterfly curve method has limitation of inability to directly measure with inline testers and also it has been reported that WSNM does not correctly reflect the write-ability for the cells with large write margin. Therefore,  bit line margin (BLM) and word-line margin (WLM) are useful and easy methods to measure the write ability of SRAM cells. The circuit setup for the BLM is shown [here](images/blmckt.png). The voltage source connected to the BL pin is sweeped from 0.7v to 0v and the corresponding Q and QB voltages are plotted on the graph. The point where the the Q and QB intersect, then the y-axis voltage where it intersects with the BL is recorded and it is the BLM. In this work, it is found to be **0.37v**.
+
 ![BLMCKT](images/blmckt.png)
 ![BLM](images/blm.png)
 
