@@ -130,7 +130,8 @@ Like the BLM, the word line margin (WLM) is calculated by latching the BL pin to
 # Conclusion
 
 # Author
-**Mohammad Mudakir Fazili**, *M.Tech Micro-electronics*, NIT Srinagar
+**Mohammad Mudakir Fazili**, *M.Tech Micro-electronics*, NIT Srinagar                                                                                           
+*mudakirfazili@gmail.com*
 
 # Acknowledgements
 1. [IIT Hyderabad](https://iith.ac.in/)
