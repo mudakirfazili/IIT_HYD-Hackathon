@@ -16,6 +16,7 @@ This repository contains the development and analysis of 10T SRAM using Synopsys
   - [Area Estimates](#area-estimates)
   - [Power Estimates](#power-estimates)
 - [Conclusion](#conclusion)
+- [Author](#author)
 - [Acknowledgements](#acknowledgements)
 - [References](#references)
 
@@ -127,6 +128,9 @@ Similar to the BLM, the word line margin (WLM) is calculated by latching the BL 
 ## Power Estimates
 
 # Conclusion
+
+# Author
+**Mohammad Mudakir Fazili**, *M.Tech Micro-electronics*, NIT Srinagar
 
 # Acknowledgements
 1. [IIT Hyderabad](https://iith.ac.in/)
