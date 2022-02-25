@@ -12,8 +12,8 @@ This repository contains the development and analysis of 10T SRAM using the Syno
   - [WSNM](#wsnm)
   - [BLM](#blm)
   - [WLM](#wlm)
+  - [Write Access Time](#write-access-time)
   - [Area Estimates](#area-estimates)
-  - [Power Estimates](#power-estimates)
 - [Conclusion](#conclusion)
 - [Author](#author)
 - [Acknowledgements](#acknowledgements)
@@ -123,9 +123,14 @@ Like the BLM, the word line margin (WLM) is calculated by latching the BL pin to
 ![BLMCKT](images/wlmsch.png)
 ![BLM](images/wlm.png)
 
+## Write Access Time
+
+Write access time or write delay (T<sub>WA</sub>) is the time required for node Q or QB (high going node) to rise to 90% of its final value after WL is activated (i.e., 50% of the final value) during write operation. In this design, it is observed to be 121ps.
+![WAT](images/wat.png)
+
 ## Area Estimates
 
-## Power Estimates
+Since we have used UCB's BSIM4 (Level 54) supporting 28nm technology PDK, the device's width used in this project is 0.1um, and the channel length (L) is 0.03um. Since these are insufficient to precisely calculate the area of the device but we can make a rough estimate. Roughly the area occupied by 10 transistors (considering the poly-silicon interconnects) is around 0.12pm<sup>2</sup>.
 
 # Conclusion
 
