@@ -14,6 +14,7 @@ This repository contains the development and analysis of 10T SRAM using the Syno
   - [WLM](#wlm)
   - [Write Access Time](#write-access-time)
   - [Area Estimates](#area-estimates)
+- [Scaling](#scaling)
 - [Conclusion](#conclusion)
 - [Author](#author)
 - [Acknowledgements](#acknowledgements)
@@ -41,20 +42,25 @@ Let us first understand how a [6T SRAM](images/6t.png) cell works.  It consists 
 | BLB | 1 | 0 | Pre | 1|
 | WL  | 1 | 1 | 1   | 0|
 
+- 6T SRAM cell
 ![6t](images/6t.png)
 
 The [10T SRAM](images/10t.png) circuit designed in this project is similar in operation to the 6T SRAM cell except for critical parameters like static noise margins (SNM) are improved. At the same time, a compromise is made with the area requirements; a however significant improvement on SNM is observed. To improve the inverter characteristics, the Schmitt trigger configuration is used. A Schmitt trigger increases or decreases the switching threshold of an inverter depending on the direction of the input transition. This adaptation is achieved with the help of a feedback mechanism [1](#references).
 
+- 10T SRAM cell                                         
 ![10t](images/10t.png)
 
 # Tools Used
 Synopsys custom compiler was provided over the remote desktop connection to the participants of this hackathon. Also, a 32nm PDK was provided that included the model files of the respective design elements like NMOS, PMOS, BJT etc. The test benches are simulated using Primewave, and the waveforms are shown on Wave view applications.
 
+- Synopsys Custom Compiler                                              
 ![Custom Compiler](images/cc.png)
 
 # SRAM Cell Design
 
 The [schematic](images/10ts.png) of the primary cell is designed using 10 transistors (8 NMOS and 2 PMOS). Ports are created for inputs, outputs and power supply. Finally, a symbol is created from the schematic. This symbol is then further used to first analyze the cell metrics; then, it can be used to scale the design to realize n-bit SRAM.
+
+- Schematic of schmitt trigger based 10T SRAM
 ![10ts](images/10ts.png)
 
 The netlist of the 10T SRAM cell is:
@@ -83,7 +89,9 @@ The above circuit is simulated and the [waveform](images/wave_write.png) depicts
 | Bit-line Period (BL and BLB)  | 1.2us |
 | Word-line Period (WL) | 700ps |
 
+- Circuit connection diagram for write operation.
 ![wave_write](images/ckt.png)
+- Simulation waveform of write operation.
 ![wave_write](images/write01.png)
 
 # SRAM Cell Analysis
@@ -93,44 +101,65 @@ In this project the following analysis are conducted on the 10T SRAM cell:
 
 The hold static noise margin is derived by latching the WL to logic 0 and BL & BLB to logic 1 as shown in the following [circuit](images/hsnmckt.png). Then the dc sweep analysis is done to the voltage at the pin Q, and the corresponding QB voltage is recorded. Then a QB(v) vs Q(v) graph is plotted by importing the simulation data in MS excel. The corresponding graph results in the hold SNM butterfly curve. The largest square that can fit inside the openings of the curve signifies the maximum amount of noise the 10T SRAM can withstand while in hold condition. We have estimated HSNM to be **0.26v** for the designed circuit. The corresponding waveforms of Q and QB in wave view can be seen [here](images/hsnmwv.png).
 
+- Circuit connection diagram for HSNM analysis.
 ![HSNMCKT](images/hsnmckt.png)
+- Butterfly curve of HSNM.
 ![HSNM](images/hsnm.png)
 
 ## RSNM
 
 The read static noise margin is derived by latching the WL to logic 1 and BL & BLB to logic 1, as shown in [circuit](images/rsnmckt.png). Then the dc sweep analysis is done to the voltage at the pin Q, and the corresponding QB voltage is recorded. Then a QB(v) vs Q(v) graph is plotted by importing the simulation data in MS excel. The corresponding graph results in the read SNM butterfly curve. The largest square that can fit inside the openings of the curve signifies the maximum amount of noise the 10T SRAM can withstand while in a read state. We have estimated RSNM to be **0.08v** for the designed circuit. The corresponding waveforms of Q and QB in wave view can be seen [here](images/rsnmwv.png).
+- Circuit connection diagram for RSNM analysis.
 ![RSNMCKT](images/rsnmckt.png)
+- Butterfly curve of RSNM.
 ![RSNM](images/RSNM.png)
 
 ## WSNM
 
 The write static noise margin is derived by latching the WL & BLB to logic 1 and BL to logic 0, as shown in [circuit](images/wnmckt.png). Then the dc sweep analysis is done to the voltage at the pin QB, and the corresponding QB voltage is recorded. Then a QB(v) vs Q(v) graph is plotted by importing the simulation data in MS excel. Then the plotted WSNM is plotted on the same graph of the RSNM, and the largest square that can fit inside the openings of the curve signifies the measure of the ability of the cell to pull down a logic 1 storing node to a voltage less than switching threshold voltage. We have estimated WSNM to be **0.26v** for the designed circuit. The corresponding waveforms of Q  in wave view can be seen [here](images/wsnm_cc.png).
 
+- Circuit connection diagram for WSNM analysis.
 ![WSNMCKT](images/wnmckt.png)
+- Graph for WSNM analysis.
 ![WSNM](images/wsnm.png)
 
 ## BLM
 
 The WSNM from the butterfly curve method has the limitation of its inability to measure with inline testers directly. It has been reported that WSNM does not correctly reflect the write-ability of cells with a large write margin. Therefore,  bit line margin (BLM) and word-line margin (WLM) are helpful and easy methods to measure the write ability of SRAM cells. The circuit setup for the BLM is shown [here](images/blmckt.png). The voltage source connected to the BL pin is swept from 0.7v to 0v, and the corresponding Q and QB voltages are plotted on the graph. The point where the Q and QB intersect, then the y-axis voltage where it intersects with the BL is recorded, and it is the BLM. In this work, it is found to be **0.37v**.
 
+- Circuit connection diagram for BLM analysis.
 ![BLMCKT](images/blmckt.png)
+- BLM analysis graph.
 ![BLM](images/blm.png)
 
 ## WLM
 
 Like the BLM, the word line margin (WLM) is calculated by latching the BL pin to logic 0 and BLB to logic 1 and then sweeping the WL from 0 to 0.6v. The voltage point where the Q and QB waveforms intersect when subtracted from the Vdd gives the WLM. In this design, it is found to be 0.05v. The low values of WLM suggest a difficult write operation.
 
+- Circuit connection diagram for WLM analysis.
 ![BLMCKT](images/wlmsch.png)
+- WLM analysis simulation waveforms.
 ![BLM](images/wlm.png)
 
 ## Write Access Time
 
 Write access time or write delay (T<sub>WA</sub>) is the time required for node Q or QB (high going node) to rise to 90% of its final value after WL is activated (i.e., 50% of the final value) during write operation. In this design, it is observed to be 121ps.
+
+- Simulation waveform for write access time analysis.
 ![WAT](images/wat.png)
 
 ## Area Estimates
 
 Since we have used UCB's BSIM4 (Level 54) supporting 28nm technology PDK, the device's width used in this project is 0.1um, and the channel length (L) is 0.03um. Since these are insufficient to precisely calculate the area of the device but we can make a rough estimate. Roughly the area occupied by 10 transistors (considering the poly-silicon interconnects) is around 0.12pm<sup>2</sup>.
+
+# Scaling
+
+1 byte SRAM circuit has been implemented along with the precharge circuit.
+
+- Schematic of precharge circuit.
+![WAT](images/precharge.png)
+- 1 Byte SRAM.
+![WAT](images/1byte.png)
 
 # Conclusion
 
