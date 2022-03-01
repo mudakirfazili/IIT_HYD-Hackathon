@@ -14,6 +14,8 @@ This repository contains the development and analysis of 10T SRAM using the Syno
   - [WLM](#wlm)
   - [Write Access Time](#write-access-time)
   - [Area Estimates](#area-estimates)
+- [Precharge Circuit](#precharge-circuit)
+- [Sense Amplifier](#sense-amplifier)
 - [Scaling](#scaling)
 - [Conclusion](#conclusion)
 - [Author](#author)
@@ -152,14 +154,20 @@ Write access time or write delay (T<sub>WA</sub>) is the time required for node 
 
 Since we have used UCB's BSIM4 (Level 54) supporting 28nm technology PDK, the device's width used in this project is 0.1um, and the channel length (L) is 0.03um. Since these are insufficient to precisely calculate the area of the device but we can make a rough estimate. Roughly the area occupied by 10 transistors (considering the poly-silicon interconnects) is around 0.12pm<sup>2</sup>.
 
-# Scaling
-
-1 byte SRAM circuit has been implemented along with the precharge circuit.
+# Precharge Circuit
 
 - Schematic of precharge circuit.
 ![WAT](images/precharge.png)
+
+# Sense Amplifier
+
 - Schematic of Sense amplifier.
 ![WAT](images/sense.png)
+
+# Scaling
+
+32-bit SRAM circuit has been implemented along with the precharge circuit.
+
 - 32 bit SRAM.
 ![WAT](images/4byte.png)
 
