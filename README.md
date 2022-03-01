@@ -166,7 +166,7 @@ Since we have used UCB's BSIM4 (Level 54) supporting 28nm technology PDK, the de
 A schmitt trigger-based 10T SRAM is successfully designed using synopsys custom compiler software. The read, write and hold operations of the SRAM are successfully verified. Also, an analysis of seven critical design parameters is carried out. It is found that the SRAM performs well on the analysed parameters. However, weak write operation fault persists and can be mitigated through high input voltages.
 
 # Author
-**Mohammad Mudakir Fazili**, *M.Tech Micro-electronics*, NIT Srinagar                                                                                           
+[**Mohammad Mudakir Fazili**](https://www.linkedin.com/in/mudakirfazili14/), *M.Tech Micro-electronics*, NIT Srinagar                                                                                           
 *mudakirfazili@gmail.com*
 
 # Acknowledgements
