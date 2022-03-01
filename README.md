@@ -158,8 +158,10 @@ Since we have used UCB's BSIM4 (Level 54) supporting 28nm technology PDK, the de
 
 - Schematic of precharge circuit.
 ![WAT](images/precharge.png)
-- 1 Byte SRAM.
-![WAT](images/1byte.png)
+- Schematic of Sense amplifier.
+![WAT](images/sense.png)
+- 32 bit SRAM.
+![WAT](images/4byte.png)
 
 # Conclusion
 
