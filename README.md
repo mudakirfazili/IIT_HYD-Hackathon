@@ -152,7 +152,7 @@ Write access time or write delay (T<sub>WA</sub>) is the time required for node 
 
 ## Area Estimates
 
-Since we have used UCB's BSIM4 (Level 54) supporting 28nm technology PDK, the device's width used in this project is 0.1um, and the channel length (L) is 0.03um. Since these are insufficient to precisely calculate the area of the device but we can make a rough estimate. Roughly the area occupied by 10 transistors (considering the poly-silicon interconnects) is around 0.12pm<sup>2</sup>.
+Since we have used UCB's BSIM4 (Level 54) supporting 28nm technology PDK, the device's width used in this project is 0.1um, and the channel length (L) is 0.03um. Since these are insufficient to precisely calculate the area of the device but we can make a rough estimate. Roughly the area occupied by 10 transistors (considering the poly-silicon interconnects) is around 1um × 0.1um.
 
 # Precharge Circuit
 
