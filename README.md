@@ -189,3 +189,9 @@ A special vote of thanks to **Kunal Ghosh** (founder VSD), **Chinmay panda** (II
 # References
 1.  J. P. Kulkarni, K. Kim and K. Roy, "A 160 mV Robust Schmitt Trigger Based Subthreshold SRAM," in IEEE Journal of Solid-State Circuits, vol. 42, no. 10, pp. 2303-2313, Oct. 2007, doi: 10.1109/JSSC.2007.897148.
 2.  Ahmad, Sayeed, Naushad Alam, and Mohd Hasan. "Pseudo differential multi-cell upset immune robust SRAM cell for ultra-low power applications." AEU-International Journal of Electronics and Communications 83 (2018): 366-375, doi: 10.1016/j.aeue.2017.09.022.
+
+# Result
+This design was categorized as outstanding in the hackathon.
+
+- Certificate.
+![Certificate](images/7.png)
