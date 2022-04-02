@@ -1,5 +1,5 @@
 # Low-Power Schmitt Trigger Based 10T SRAM Cell
-This repository contains the development and analysis of 10T SRAM using the Synopsys Custom Compiler tool. The 10T SRAM cell is designed on 28nm VLSI fabrication technology. This project was developed during the IIT Hyderabad Cloud-Based Analog IC Design Hackathon.
+This repository contains the development and analysis of 10T SRAM using the Synopsys Custom Compiler tool. The 10T SRAM cell is designed on 28nm VLSI fabrication technology. This project was developed during the [IIT Hyderabad Cloud-Based Analog IC Design Hackathon](https://hackathoniith.in).
 # Table of Contents
 - [Introduction](#introduction)
   - [Problem Statement](#problem-statement)
@@ -191,7 +191,7 @@ A special vote of thanks to **Kunal Ghosh** (founder VSD), **Chinmay panda** (II
 2.  Ahmad, Sayeed, Naushad Alam, and Mohd Hasan. "Pseudo differential multi-cell upset immune robust SRAM cell for ultra-low power applications." AEU-International Journal of Electronics and Communications 83 (2018): 366-375, doi: 10.1016/j.aeue.2017.09.022.
 
 # Result
-This design was categorized as outstanding in the hackathon.
+[This design was categorized as outstanding in the hackathon](https://hackathoniith.in/result-outstanding)
 
 - Certificate.
 ![Certificate](images/7.png)
